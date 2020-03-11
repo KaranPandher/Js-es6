@@ -153,4 +153,49 @@ console.log(isMyStringInside); // We would get the matching element
  const helloVar = 'Hello, World!';
  const sampleName = 'Sam';
 
- const myNewString = 'Hey there, my name is ${sampleName}; Id like to give you a big: "${helloVar}"!!'
+ const myNewString = `Hey there, my name is ${sampleName}; Id like to give you a big: "${helloVar}"!!`; // The syntax for template literals is ${variablename}
+ //Note: This only works inside of backticks! But is super useful. It saves us from extra concatenation. 
+ console.log(myNewString);
+
+ /**
+  * Spread Operator 
+  * DO NOT get this confused with the rest parameter! both are 3 dots.... 
+  * REMEMBER that rest parameter is always in PARAMETER area of a function, nowhere else. Spread is used ANYWHERE else, basically. 
+  */
+ const newArray = [ 'Hello', ',', '', 'Kobe', '!']
+ console.log(newArray);
+ console.log(...newArray);
+ //Make its part of one string altogether! Brought the values in the array together as one string! 
+
+ // Spread operator separates into separate values. 
+ const aBunchofNums = [5, 10, 36, 58];
+ console.log( addAllNums(5, 10, 36, 58) ); // This and the below, are equivalent (our array gets broken up! )
+ console.log( addAllNums( ...aBunchofNums) ); //Spreading an argument.
+
+ /**
+  * String Methods! 
+  */
+
+  /**
+   * .search() method:
+   * 
+   * Regex Learning Tool: https://regexone.com
+   * 
+   */
+
+   const myTestString = 'Greetings, Programs!';
+   console.log(myTestString.search(/Greetings/i) );
+   // Tells you the position of the substring. Result //0 
+   console.log(myTestString.search(/TING/i) ); // Regex match, i is for case INsensitive. Returns the SUBSTRING POSITION. Ting is 4
+
+/**
+ * replace() method:
+ */
+
+ const myReplacedString = myTestString.replace(/Programs/, 'World');
+ console.log(myReplacedString);
+
+ /**
+  * Blocks
+  */
+ 
