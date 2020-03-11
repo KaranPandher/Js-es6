@@ -198,4 +198,65 @@ console.log(isMyStringInside); // We would get the matching element
  /**
   * Blocks
   */
- 
+
+  // Unnamed block.. so we can use this to contain otherwise-global const and let variables. 
+  {
+      const myBlockNestedVar = 38;
+  }
+
+  // console.log(myBlockNestedVar);
+
+  // We CAN name blocks if we want. 
+  myOrganizeName: {
+      // We can organize some code in here, and control scope of let/const. 
+      let myBlockNestedVar = 55; // We used the same name in our unnamed block?! Thats okay, it was born in a differently scoped block! 
+      myBlockNestedVar++;
+      console.log(myBlockNestedVar);
+      myFinalResut = myBlockNestedVar;
+  }
+//console.log(myFinalResult);
+
+  /**
+   * 
+   */
+
+  class Movie {
+    constructor(name, genre, year) {
+        //We can use constructor to set up our properties. When we make a new movie (object), we can pass in arguments this way! 
+        this.name = name;
+        this.genre = genre;
+        this.year = year; 
+    }
+    get name() { // How we retrieve the property. a GETTER
+        return this.name;
+    }
+    set name( name ) { // How we store a new property value. a SETTER.
+        if (typeof name === 'string') {
+            this.name = name;
+        } else {
+            this.name = name.toString();
+        }
+        return this.name;
+    }
+
+showPoster() { //This is a method! WE can name them as we'd like. 
+    const info = `
+        MOVIE INFO
+        ==========
+        Name: ${this.name}
+        Genre: ${this.genre}
+        Year: ${this.year}
+        `;
+        return info;
+    }
+}
+
+const tron = new Movie('Disney\'s TRON', 'Adventure', 1982);
+const dragonheart = new  Movie('Dragonheart', 'Fantasy', 1996);
+const godfather = new Movie ('GodFather II', 'Action', 1974);
+
+console.log(tron);
+console.log(dragonheart);
+console.log(godfather); //displays info in console
+
+// To call the function use tron.showPoster(tron)
