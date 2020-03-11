@@ -122,4 +122,35 @@ console.log(isMyStringInside); // We would get the matching element
 
     console.log( myOtherFunction(34,6) );
 
+    /**
+     * Function default parameter values. 
+     */
 
+     // We can set defaults, to prevent errors in case nothing gets passed in for a parameter! 
+     addNums = (x =0, y =0) => x + y;
+     console.log( addNums() ); // No arguments! But our default values kick in ! 
+    
+
+     
+
+    /**
+     * Rest Parameter
+     */
+
+    findHighNum = (...args) => { // ...args will capture any number of arguments that we pass! 
+        console.log(args); // It can be called by the name we had inbetween our parenthesis. 
+        return args;
+    }
+
+    // 
+    addAllNums = (...nums) => nums.reduce( (a,v) => a + v);
+    console.log( addAllNums(64, 6, 10) );
+
+/**
+ * Template Literals 
+ */
+
+ const helloVar = 'Hello, World!';
+ const sampleName = 'Sam';
+
+ const myNewString = 'Hey there, my name is ${sampleName}; Id like to give you a big: "${helloVar}"!!'
